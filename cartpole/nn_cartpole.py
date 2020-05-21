@@ -32,8 +32,7 @@ class Agent():
 
     def train(self, data):
         x = np.array([i[0] for i in data]).reshape(-1, len(data[0][0]), 1)
-        print(x.shape)
-        y = np.array(i[1] for i in data)
+        y = np.array([i[1] for i in data])
         classifier.fit(x, y, epochs=10, verbose=1)
 
 
@@ -95,7 +94,7 @@ def gen_one():
 
 gen_one_data = gen_one()
 
-#agent.train(gen_one_data)
+agent.train(gen_one_data)
 
-# print(gen_one_data.shape)
+#print(gen_one_data.shape)
 
