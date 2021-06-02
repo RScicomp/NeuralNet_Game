@@ -259,9 +259,9 @@ def controlled_run(wrapper, counter):
 				values['closest_enemy'] = -1
 
 			values['score_increased'] = score_increased
-
+			wrapper.reward(values)
 			response = wrapper.control(values)
-
+		
 			# Only take new action if the player can accept the action
 			# i.e. it is not in air
 			if not player.inair:
@@ -269,12 +269,14 @@ def controlled_run(wrapper, counter):
 
 			if response == JUMP:
 				player.jump()
+
 			elif response == DO_NOTHING:
 				pass
 
 			old_score = new_score
 			old_closest_enemy = values['closest_enemy']
 
+			
 	# pygame.quit()
 	# quit()
 

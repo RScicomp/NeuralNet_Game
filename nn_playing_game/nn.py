@@ -10,7 +10,8 @@ from game import JUMP
 games_count = 0
 total_number_of_games = 30
 
-import keras
+import tensorflow
+import tensorflow.keras as keras
 from keras.models import Sequential
 from keras.layers import Dense
 from keras.optimizers import Adam
